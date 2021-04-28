@@ -1,6 +1,8 @@
 new Vue({
   el: "#app",
-  vuetify: new Vuetify(),
+  vuetify: new Vuetify({
+  theme: { dark: true },
+}),
   data: () => ({
     updating: true,
     timer: null,
@@ -16,7 +18,6 @@ new Vue({
 
 
   mounted: function () {
-    this.$vuetify.theme.dark = true
     this.timer = setInterval(() => {
       this.greet();
     }, 8000);
