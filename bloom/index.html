@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Vuetify Example Pen</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Material+Icons'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="app">
+  <v-app id="inspire">
+    <v-container>
+      <v-row justify="space-around">
+        <v-card width="400">
+          <v-img
+            height="200px"
+            position="bottom"
+            src="https://proxy.ixil.cc/prox?image=https://jjgirls.com/thumbs/160222/175116.jpg"
+          >
+            <v-app-bar
+              flat
+              color="rgba(0, 0, 0, 0)"
+            >
+  
+              <v-toolbar-title class="title white--text pl-0" style="filter: drop-shadow(3px 1px 4px black); font-size: 2rem !important; ">
+                Service Status
+              </v-toolbar-title>
+  
+              <v-spacer></v-spacer>
+              <v-btn
+              color="white"
+                     @click="updating = !updating"
+              icon
+            >
+              <v-icon>{{updating ? `mdi-timer-off` : `mdi-timer`}}</v-icon>
+            </v-btn>
+            </v-app-bar>
+  
+            <v-card-title class="white--text mt-8">
+              <v-avatar size="56">
+                <img
+                  alt="user"
+                     :style="indexing? `border-color: green;` : `border-color: red;`"
+                     style="border: 0.2rem solid;"
+                  src="https://cdn.pixabay.com/photo/2020/06/24/19/12/cabbage-5337431_1280.jpg"
+                >
+              </v-avatar>
+              <p class="ml-3 mt-4">
+                Search Engine <br>
+                Status: {{indexing? `indexing` : `Serving`}}
+              </p>
+            </v-card-title>
+          </v-img>
+  
+          <v-card-text>
+            <div class="font-weight-bold ml-8 mb-2">
+              Today
+            </div>
+            
+            <v-timeline
+              align-top
+              dense
+            >
+              <v-timeline-item
+                v-for="(message, index) in messages"
+                :key="message.time"
+                :color="index > 0 ? `green`: `rgba(174,249,151,1)`"
+                small
+              >
+                <div>
+                  <div class="font-weight-normal">
+                    <strong>{{ message.from }}</strong> @{{ message.time }}
+                  </div>
+                  <div class="mt-5">Object Count: {{ message.message }}</div>
+                </div>
+              </v-timeline-item>
+            </v-timeline>
+          </v-card-text>
+        </v-card>
+      </v-row>
+    </v-container>
+  </v-app>
+</div>
+<!-- partial -->
+  <script src='https://cdn.jsdelivr.net/npm/babel-polyfill/dist/polyfill.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@2.4.11/dist/vuetify.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
