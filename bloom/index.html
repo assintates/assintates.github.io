@@ -66,9 +66,9 @@
               dense
             >
               <v-timeline-item
-                v-for="(message, index) in messages.reverse()"
+                v-for="(message, index) in messages"
                 :key="message.time"
-                :color="index < 0 ? `green`: `rgba(174,249,151,1)`"
+                :color="index > 0 ? `green`: `rgba(174,249,151,1)`"
                 small
               >
                 <div>
