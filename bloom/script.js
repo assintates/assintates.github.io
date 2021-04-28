@@ -16,6 +16,7 @@ new Vue({
 
 
   mounted: function () {
+    this.$vuetify.theme.dark = true
     this.timer = setInterval(() => {
       this.greet();
     }, 8000);
